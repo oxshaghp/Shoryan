@@ -1,0 +1,24 @@
+{
+  "home": {
+    "title": "مرحبًا بك في شريان",
+    "subtitle": "منصة تبرع بالدم تربط المتبرعين والمستشفيات بسرعة وأمان.",
+    "switchLabel": "اللغة",
+    "cta": "ابدأ الآن"
+  },
+  "nav": {
+    "brand": "شريان",
+    "links": {
+      "home": "الرئيسية",
+      "about": "من نحن",
+      "services": "الخدمات",
+      "hospitals": "المستشفيات",
+      "reviews": "التقييمات",
+      "contact": "تواصل معنا"
+    },
+    "mobileMenuOpen": "فتح القائمة",
+    "mobileMenuClose": "إغلاق القائمة",
+    "languageSwitch": "English",
+    "ar": "العربية",
+    "en": "الإنجليزية"
+  }
+}

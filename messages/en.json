@@ -1,0 +1,24 @@
+{
+  "home": {
+    "title": "Welcome to Shoryan",
+    "subtitle": "A blood donation platform connecting donors and hospitals in real time.",
+    "switchLabel": "Language",
+    "cta": "Get Started"
+  },
+  "nav": {
+    "brand": "Shoryan",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "hospitals": "Hospitals",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    },
+    "mobileMenuOpen": "Open menu",
+    "mobileMenuClose": "Close menu",
+    "languageSwitch": "العربية",
+    "ar": "Arabic",
+    "en": "English"
+  }
+}
