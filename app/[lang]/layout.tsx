@@ -6,6 +6,7 @@ import "../globals.css";
 import { hasLocale, locales } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 import SiteLoaderOverlay from "@/components/SiteLoaderOverlay";
 
 const appSans = Cairo({
@@ -65,7 +66,8 @@ export default async function RootLayout({
       <body className="min-h-full flex flex-col">
         <SiteLoaderOverlay lang={lang} />
         <NavBar lang={lang} labels={dict.nav} />
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer lang={lang} brand={dict.nav.brand} navLinks={dict.nav.links} labels={dict.footer} />
       </body>
     </html>
   );

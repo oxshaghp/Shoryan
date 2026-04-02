@@ -59,6 +59,7 @@ function NavBar({ lang, labels }: NavBarProps) {
             <div className="mx-auto flex h-18.5 w-full max-w-7xl items-center justify-between px-4 sm:px-6">
                 <Link href={`/${lang}`} className="flex items-center gap-2">
                     <Image src="/logo.png" alt="Shoryan Logo" width={48} height={48} priority />
+                    {/* I will edit the later shoryan to any other theme  */}
                     <span className="text-lg font-bold sm:text-xl">{labels.brand}</span>
                 </Link>
 
@@ -67,7 +68,7 @@ function NavBar({ lang, labels }: NavBarProps) {
                         <Link
                             key={link.key}
                             href={withLocale(link.href)}
-                            className="text-[15px] font-medium text-black/80 transition hover:text-red-600"
+                            className="text-[15px] font-bold text-black/80 transition hover:text-red-600"
                         >
                             {labels.links[link.key]}
                         </Link>

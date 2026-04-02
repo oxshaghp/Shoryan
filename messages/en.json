@@ -5,6 +5,94 @@
     "switchLabel": "Language",
     "cta": "Get Started"
   },
+  "hero": {
+    "badge": "Smart Emergency Blood Network",
+    "titleLeading": "Save Lives,",
+    "titleHighlight": "Donate Blood",
+    "description": "Shoryan connects blood donors with people in urgent need. Join our trusted community and respond in minutes.",
+    "needBlood": "I Need Blood",
+    "donate": "I Want to Donate",
+    "statValue": "10K+",
+    "statLabel": "Lives Saved",
+    "logoAlt": "Shoryan logo",
+    "floating": {
+      "donors": "Active Donors",
+      "hospitals": "Connected Hospitals",
+      "response": "Fast Verified Match",
+      "bloodTypes": "A+  O-  B+"
+    }
+  },
+  "numbers": {
+    "donors": {
+      "value": 25,
+      "suffix": "K+",
+      "label": "Active Donors"
+    },
+    "hospitals": {
+      "value": 150,
+      "suffix": "+",
+      "label": "Partner Hospitals"
+    },
+    "donations": {
+      "value": 50,
+      "suffix": "K+",
+      "label": "Donations Made"
+    }
+  },
+  "howWork": {
+    "title": "How Sharyan Works",
+    "subtitle": "A simple, fast, and reliable platform to connect donors with those in need",
+    "cards": {
+      "nearby": {
+        "title": "Find Nearby Donors",
+        "description": "Instantly locate available blood donors in your area with our real-time map feature"
+      },
+      "alerts": {
+        "title": "Emergency Alerts",
+        "description": "Get notified immediately when someone needs your blood type in urgent situations"
+      },
+      "verified": {
+        "title": "Safe & Verified",
+        "description": "All donors and hospitals are verified to ensure safety and reliability"
+      }
+    }
+  },
+  "map": {
+    "title": "Donors & Requests Near You",
+    "subtitle": "Real-time view of blood donors and donation requests in your area",
+    "filters": {
+      "type": "Type",
+      "allTypes": "All Types",
+      "allAreas": "All Areas",
+      "area": "Area"
+    },
+    "markerTypes": {
+      "donor": "Donor",
+      "request": "Blood Request",
+      "hospital": "Hospital"
+    },
+    "popup": {
+      "area": "Area",
+      "bloodType": "Blood Type"
+    },
+    "pointsShown": "points shown"
+  },
+  "ready": {
+    "title": "Ready to Save Lives?",
+    "subtitle": "Join thousands of donors making a difference every day. Your donation can save up to three lives.",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started"
+  },
+  "footer": {
+    "nativeBrand": "شريان",
+    "description": "Connecting blood donors with people in need. Save lives, one donation at a time.",
+    "rights": "© 2026 Sharyan. All rights reserved.",
+    "quickLinks": "Quick Links",
+    "emergency": "Emergency",
+    "hotline": "Hotline: 123-456-7890",
+    "email": "Email: emergency@sharyan.org",
+    "availability": "24/7 Available"
+  },
   "nav": {
     "brand": "Shoryan",
     "links": {
