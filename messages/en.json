@@ -57,31 +57,180 @@
       }
     }
   },
-  "map": {
-    "title": "Donors & Requests Near You",
-    "subtitle": "Real-time view of blood donors and donation requests in your area",
-    "filters": {
-      "type": "Type",
-      "allTypes": "All Types",
-      "allAreas": "All Areas",
-      "area": "Area"
-    },
-    "markerTypes": {
-      "donor": "Donor",
-      "request": "Blood Request",
-      "hospital": "Hospital"
-    },
-    "popup": {
-      "area": "Area",
-      "bloodType": "Blood Type"
-    },
-    "pointsShown": "points shown"
-  },
   "ready": {
     "title": "Ready to Save Lives?",
     "subtitle": "Join thousands of donors making a difference every day. Your donation can save up to three lives.",
     "learnMore": "Learn More",
     "getStarted": "Get Started"
+  },
+  "about": {
+    "title": "About Shoryan",
+    "description": "Learn more about our mission and how we're making a difference in the world of blood donation.",
+    "mission": {
+      "badge": "Our Mission",
+      "title": "What is Sharyan?",
+      "paragraphOne": "Sharyan is a modern blood donation platform that bridges the gap between those who need blood and those willing to donate. We leverage technology to make blood donation faster, easier, and more efficient.",
+      "paragraphTwo": "Our name \"Sharyan\" (شريان) means \"artery\" in Arabic - the vital blood vessel that delivers life-giving blood throughout the body. Just like an artery, we deliver hope and life to those in need.",
+      "stats": {
+        "livesSaved": {
+          "value": "10K+",
+          "label": "Lives Saved"
+        },
+        "donors": {
+          "value": "25K+",
+          "label": "Donors"
+        },
+        "donations": {
+          "value": "50K+",
+          "label": "Donations"
+        },
+        "hospitals": {
+          "value": "150+",
+          "label": "Hospitals"
+        }
+      }
+    },
+    "offer": {
+      "title": "What We Offer",
+      "subtitle": "Comprehensive services to make blood donation accessible and efficient",
+      "cards": [
+        {
+          "title": "Donor Registration",
+          "description": "Quick and easy registration process for blood donors with profile management and donation history tracking"
+        },
+        {
+          "title": "Blood Requests",
+          "description": "Submit urgent blood requests that are instantly broadcasted to matching donors in your area"
+        },
+        {
+          "title": "Real-Time Matching",
+          "description": "Smart algorithm matches blood type, location, and availability to find the perfect donor quickly"
+        },
+        {
+          "title": "Emergency Notifications",
+          "description": "Instant alerts sent to eligible donors when urgent blood needs arise in their vicinity"
+        },
+        {
+          "title": "Hospital Network",
+          "description": "Direct connection with verified hospitals and blood banks for seamless coordination"
+        },
+        {
+          "title": "Community Support",
+          "description": "Join a community of life-savers with donation drives, events, and awareness campaigns"
+        }
+      ]
+    },
+    "how": {
+      "title": "How Sharyan Saves Lives",
+      "subtitle": "Every two seconds, someone needs blood. Sharyan ensures that help arrives on time.",
+      "steps": [
+        {
+          "title": "Instant Connection",
+          "description": "When someone needs blood, our platform instantly notifies all matching donors in the area, reducing critical wait times from hours to minutes."
+        },
+        {
+          "title": "Verified Safety",
+          "description": "All donors undergo verification and hospitals follow strict protocols, ensuring safe and reliable blood donation processes."
+        },
+        {
+          "title": "Community Building",
+          "description": "We create a culture of giving by connecting people, sharing stories, and celebrating every life saved through our platform."
+        },
+        {
+          "title": "24/7 Availability",
+          "description": "Emergencies don't wait for business hours. Sharyan operates around the clock to ensure help is always available when needed."
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Explore the services Sharyan provides to connect donors, patients, and hospitals quickly and safely.",
+    "features": {
+      "cards": [
+        {
+          "title": "Blood Donation Requests",
+          "description": "Submit urgent blood requests and get connected with matching donors instantly. Our platform broadcasts your need to all eligible donors in your area.",
+          "points": [
+            "Instant broadcast to matching donors",
+            "Real-time status tracking",
+            "Priority handling for emergencies",
+            "Hospital coordination support"
+          ]
+        },
+        {
+          "title": "Donor Registration",
+          "description": "Join our community of life-savers with a simple registration process. Create your donor profile and start saving lives today.",
+          "points": [
+            "Quick 5-minute registration",
+            "Complete profile management",
+            "Donation history tracking",
+            "Availability control settings"
+          ]
+        }
+      ]
+    },
+    "additionalFeatures": {
+      "title": "Additional Features",
+      "subtitle": "More ways we help save lives and support our community",
+      "cards": [
+        {
+          "icon": "search",
+          "title": "Smart Search",
+          "description": "Advanced search filters for blood type, location, availability, and more to find the perfect match quickly."
+        },
+        {
+          "icon": "activity",
+          "title": "Health Tracking",
+          "description": "Monitor your donation history, health metrics, and eligibility status. Get reminders for your next donation."
+        },
+        {
+          "icon": "award",
+          "title": "Recognition Program",
+          "description": "Earn badges and recognition for your donations. Join leaderboards and celebrate milestones with the community."
+        },
+        {
+          "icon": "calendar",
+          "title": "Appointment Scheduling",
+          "description": "Book donation appointments at partner hospitals and blood banks. Get reminders and manage your schedule easily."
+        },
+        {
+          "icon": "heart",
+          "title": "Impact Stories",
+          "description": "Read real stories from recipients and donors. See the direct impact of your contributions and stay motivated."
+        },
+        {
+          "icon": "bell",
+          "title": "Emergency Notifications",
+          "description": "Receive instant alerts when someone needs your blood type in your area. Customize notification preferences and response times."
+        },
+        {
+          "icon": "mappin",
+          "title": "Location Matching",
+          "description": "Advanced geolocation technology finds the nearest available donors and hospitals, minimizing travel time and maximizing efficiency."
+        },
+        {
+          "icon": "building",
+          "title": "Hospital Integration",
+          "description": "Direct connection with partner hospitals and blood banks for seamless coordination and verified donation processes."
+        },
+        {
+          "icon": "users",
+          "title": "Community Support",
+          "description": "Join local donation drives, awareness campaigns, and connect with fellow donors to build a stronger community of life-savers."
+        },
+        {
+          "icon": "shield",
+          "title": "Safety & Verification",
+          "description": "All users undergo verification processes to ensure safety. Hospitals follow strict protocols for blood testing and handling."
+        },
+        {
+          "icon": "clock",
+          "title": "24/7 Support",
+          "description": "Round-the-clock emergency support and customer service to assist with urgent requests and platform navigation."
+        }
+      ]
+    }
   },
   "footer": {
     "nativeBrand": "شريان",

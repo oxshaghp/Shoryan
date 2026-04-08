@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 
 import HeroSection from "@/components/HeroSection";
 import HowWorkSection from "@/components/HowWorkSection";
-import MapSection from "@/components/MapSection";
 import NumbersSection from "@/components/NumbersSection";
 import ReadySection from "@/components/ReadySection";
 import { hasLocale } from "@/lib/i18n/config";
@@ -26,7 +25,6 @@ async function page({ params }: PageProps) {
       <HeroSection lang={lang} labels={dict.hero} />
       <NumbersSection lang={lang} labels={dict.numbers} />
       <HowWorkSection lang={lang} labels={dict.howWork} />
-      <MapSection lang={lang} labels={dict.map} />
       <ReadySection lang={lang} labels={dict.ready} />
     </div>
   );

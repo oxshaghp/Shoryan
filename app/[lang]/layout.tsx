@@ -64,7 +64,7 @@ export default async function RootLayout({
       className={`${appSans.variable} ${appMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SiteLoaderOverlay lang={lang} />
+        <SiteLoaderOverlay key={lang} lang={lang} />
         <NavBar lang={lang} labels={dict.nav} />
         <main className="flex-1">{children}</main>
         <Footer lang={lang} brand={dict.nav.brand} navLinks={dict.nav.links} labels={dict.footer} />
