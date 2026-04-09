@@ -232,6 +232,53 @@
       ]
     }
   },
+  "hospitals": {
+    "title": "المستشفيات الشريكة وبنوك الدم",
+    "description": "اعثر على المستشفيات وبنوك الدم في منطقتك مع معلومات فورية عن مخزون الدم",
+    "searchPlaceholder": "ابحث باسم المستشفى أو الموقع...",
+    "bloodTypeFilter": "كل فصائل الدم",
+    "allBloodTypes": "كل فصائل الدم",
+    "clearFilters": "مسح الفلاتر",
+    "noResultsTitle": "لا توجد مستشفيات مطابقة",
+    "noResultsDescription": "جرّب كلمة بحث مختلفة أو غيّر فلتر فصيلة الدم لتوسيع النتائج.",
+    "stats": {
+      "partnerHospitals": {
+        "value": "+150",
+        "label": "مستشفى شريك"
+      },
+      "emergencySupport": {
+        "value": "24/7",
+        "label": "دعم الطوارئ"
+      },
+      "verifiedFacilities": {
+        "value": "100%",
+        "label": "منشآت موثقة"
+      }
+    },
+    "foundTitle": "تم العثور على 6 مستشفيات",
+    "foundDescription": "اختر مستشفى لعرض التفاصيل وتوفر مخزون الدم",
+    "stockStatusTitle": "حالة مخزون الدم",
+    "requestBlood": "طلب دم من هذا المستشفى",
+    "guideTitle": "دليل مستويات مخزون الدم",
+    "guide": {
+      "high": {
+        "label": "مخزون مرتفع",
+        "description": "متوفر بسهولة"
+      },
+      "medium": {
+        "label": "مخزون متوسط",
+        "description": "كمية محدودة"
+      },
+      "low": {
+        "label": "مخزون منخفض",
+        "description": "يحتاج إلى تبرعات"
+      },
+      "critical": {
+        "label": "حرج",
+        "description": "احتياج عاجل"
+      }
+    }
+  },
   "footer": {
     "nativeBrand": "Sharyan",
     "description": "نربط المتبرعين بالدم مع المحتاجين بسرعة وأمان. أنقذ الأرواح بتبرعك.",

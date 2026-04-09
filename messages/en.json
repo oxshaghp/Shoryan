@@ -232,6 +232,53 @@
       ]
     }
   },
+  "hospitals": {
+    "title": "Partner Hospitals & Blood Banks",
+    "description": "Find hospitals and blood banks in your area with real-time blood stock information",
+    "searchPlaceholder": "Search by hospital name or location...",
+    "bloodTypeFilter": "All Blood Types",
+    "allBloodTypes": "All Blood Types",
+    "clearFilters": "Clear Filters",
+    "noResultsTitle": "No matching hospitals found",
+    "noResultsDescription": "Try a different search term or blood type filter to broaden the results.",
+    "stats": {
+      "partnerHospitals": {
+        "value": "150+",
+        "label": "Partner Hospitals"
+      },
+      "emergencySupport": {
+        "value": "24/7",
+        "label": "Emergency Support"
+      },
+      "verifiedFacilities": {
+        "value": "100%",
+        "label": "Verified Facilities"
+      }
+    },
+    "foundTitle": "6 Hospitals Found",
+    "foundDescription": "Select a hospital to view details and blood stock availability",
+    "stockStatusTitle": "Blood Stock Status",
+    "requestBlood": "Request Blood from This Hospital",
+    "guideTitle": "Blood Stock Level Guide",
+    "guide": {
+      "high": {
+        "label": "High Stock",
+        "description": "Readily available"
+      },
+      "medium": {
+        "label": "Medium Stock",
+        "description": "Limited supply"
+      },
+      "low": {
+        "label": "Low Stock",
+        "description": "Need donations"
+      },
+      "critical": {
+        "label": "Critical",
+        "description": "Urgent need"
+      }
+    }
+  },
   "footer": {
     "nativeBrand": "شريان",
     "description": "Connecting blood donors with people in need. Save lives, one donation at a time.",

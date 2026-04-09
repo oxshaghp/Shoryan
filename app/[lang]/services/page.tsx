@@ -22,16 +22,12 @@ async function ServicesPage({ params }: ServicesPageProps) {
 
   return (
     <section>
-      <section className="relative overflow-hidden hero-surface-gradient py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-          <HeadSection title={dict.services.title} description={dict.services.description} />
-        </div>
-      </section>
+      <HeadSection surface title={dict.services.title} description={dict.services.description} />
 
       <ServicesFeatureSection lang={lang} labels={dict.services.features} />
       <ServicesAdditionalFeaturesSection lang={lang} labels={dict.services.additionalFeatures} />
-            <ReadySection lang={lang} labels={dict.ready} />
-    
+      <ReadySection lang={lang} labels={dict.ready} />
+
     </section>
   );
 }
