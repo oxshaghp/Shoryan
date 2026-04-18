@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 
-import HeroSection from "@/components/HeroSection";
-import HowWorkSection from "@/components/HowWorkSection";
-import NumbersSection from "@/components/NumbersSection";
-import ReadySection from "@/components/ReadySection";
+import HeroSection from "@/components/home/HeroSection";
+import HowWorkSection from "@/components/home/HowWorkSection";
+import NumbersSection from "@/components/home/NumbersSection";
+import ReadySection from "@/components/shared/ReadySection";
 import { hasLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 

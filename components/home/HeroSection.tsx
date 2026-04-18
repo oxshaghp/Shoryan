@@ -5,7 +5,7 @@ import { Building2, HeartPulse, ShieldCheck, Users } from "lucide-react";
 import { motion } from "motion/react";
 
 import type { AppLocale } from "@/lib/i18n/config";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 type HeroLabels = {
   badge: string;

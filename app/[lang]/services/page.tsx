@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 
-import ServicesAdditionalFeaturesSection from "@/components/ServicesAdditionalFeaturesSection";
-import HeadSection from "@/components/HeadSection";
-import ServicesFeatureSection from "@/components/ServicesFeatureSection";
+import ServicesAdditionalFeaturesSection from "@/components/services/ServicesAdditionalFeaturesSection";
+import HeadSection from "@/components/shared/HeadSection";
+import ServicesFeatureSection from "@/components/services/ServicesFeatureSection";
 import { hasLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import ReadySection from "@/components/ReadySection";
+import ReadySection from "@/components/shared/ReadySection";
 
 type ServicesPageProps = {
   params: Promise<{ lang: string }>;

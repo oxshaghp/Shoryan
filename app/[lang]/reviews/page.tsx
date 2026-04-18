@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 
-import CustomerReviewsSection from "@/components/CustomerReviewsSection";
-import HeadSection from "@/components/HeadSection";
-import ReviewsHighlightsSection from "@/components/ReviewsHighlightsSection";
-import ReviewsTrustSection from "@/components/ReviewsTrustSection";
+import CustomerReviewsSection from "@/components/reviews/CustomerReviewsSection";
+import HeadSection from "@/components/shared/HeadSection";
+import ReviewsHighlightsSection from "@/components/reviews/ReviewsHighlightsSection";
+import ReviewsTrustSection from "@/components/reviews/ReviewsTrustSection";
 import { hasLocale } from "@/lib/i18n/config";
-import ReadySection from "@/components/ReadySection";
+import ReadySection from "@/components/shared/ReadySection";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
 type ReviewsPageProps = {

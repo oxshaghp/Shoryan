@@ -289,6 +289,26 @@
     "email": "البريد: emergency@sharyan.org",
     "availability": "متاح 24/7"
   },
+  "login": {
+    "badge": "دخول آمن",
+    "title": "مرحبًا بعودتك",
+    "description": "سجّل دخولك لمتابعة إدارة التبرعات والطلبات ولوحة التحكم الخاصة بك.",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "your.email@example.com",
+    "passwordLabel": "كلمة المرور",
+    "passwordPlaceholder": "اكتب كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "submit": "تسجيل الدخول",
+    "createAccount": "إنشاء حساب جديد",
+    "sideTitle": "بياناتك في أمان",
+    "sideDescription": "نستخدم جلسات آمنة وطبقات تحقق لحماية حسابك والإجراءات الحساسة المرتبطة بالمرضى.",
+    "benefitOne": "وصول سريع للوحة التحكم حسب الدور",
+    "benefitTwo": "معايير حماية عالية للحساب",
+    "benefitThree": "تحديثات فورية للطلبات العاجلة",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور"
+  },
   "nav": {
     "brand": "شريان",
     "links": {

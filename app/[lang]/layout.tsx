@@ -5,9 +5,9 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { hasLocale, locales } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import SiteLoaderOverlay from "@/components/SiteLoaderOverlay";
+import NavBar from "@/components/layout/NavBar";
+import Footer from "@/components/layout/Footer";
+import SiteLoaderOverlay from "@/components/layout/SiteLoaderOverlay";
 
 const appSans = Cairo({
   variable: "--font-sans",

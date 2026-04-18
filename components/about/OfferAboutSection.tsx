@@ -3,7 +3,7 @@
 import { CircleCheck } from "lucide-react";
 import { motion } from "motion/react";
 
-import HeadSection from "@/components/HeadSection";
+import HeadSection from "@/components/shared/HeadSection";
 import type { AppLocale } from "@/lib/i18n/config";
 
 type OfferCard = {

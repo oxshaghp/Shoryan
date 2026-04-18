@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 
-import HeadSection from "@/components/HeadSection";
-import HowAbout from "@/components/HowAbout";
-import OfferAboutSection from "@/components/OfferAboutSection";
-import OurMission from "@/components/OurMission";
+import HeadSection from "@/components/shared/HeadSection";
+import HowAbout from "@/components/about/HowAbout";
+import OfferAboutSection from "@/components/about/OfferAboutSection";
+import OurMission from "@/components/about/OurMission";
 import { hasLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import ReadySection from "@/components/ReadySection";
+import ReadySection from "@/components/shared/ReadySection";
 
 type AboutPageProps = {
   params: Promise<{ lang: string }>;

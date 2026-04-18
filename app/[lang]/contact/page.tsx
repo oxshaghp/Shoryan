@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 
-import ContactFormSection from "@/components/ContactFormSection";
-import ContactInfoCardsSection from "@/components/ContactInfoCardsSection";
-import HeadSection from "@/components/HeadSection";
+import ContactFormSection from "@/components/contact/ContactFormSection";
+import ContactInfoCardsSection from "@/components/contact/ContactInfoCardsSection";
+import HeadSection from "@/components/shared/HeadSection";
 import { hasLocale } from "@/lib/i18n/config";
 
 type ContactPageProps = {

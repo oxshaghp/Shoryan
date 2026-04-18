@@ -289,6 +289,26 @@
     "email": "Email: emergency@sharyan.org",
     "availability": "24/7 Available"
   },
+  "login": {
+    "badge": "Secure Access",
+    "title": "Welcome Back",
+    "description": "Log in to continue managing donations, requests, and your personal dashboard.",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "your.email@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "submit": "Log In",
+    "createAccount": "Create New Account",
+    "sideTitle": "Your data is protected",
+    "sideDescription": "We use secure sessions and verification layers to keep your account and patient-sensitive actions safe.",
+    "benefitOne": "Fast, role-based dashboard access",
+    "benefitTwo": "Secure account protection standards",
+    "benefitThree": "Real-time updates for urgent requests",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
+  },
   "nav": {
     "brand": "Shoryan",
     "links": {

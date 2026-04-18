@@ -1,6 +1,6 @@
 "use client";
 
-import HeadSection from "@/components/HeadSection";
+import HeadSection from "@/components/shared/HeadSection";
 import { motion } from "motion/react";
 import type { AppLocale } from "@/lib/i18n/config";
 

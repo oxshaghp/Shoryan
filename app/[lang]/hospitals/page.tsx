@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
-import HeadSection from "@/components/HeadSection";
-import HospitalsDirectorySection from "@/components/HospitalsDirectorySection";
+import HeadSection from "@/components/shared/HeadSection";
+import HospitalsDirectorySection from "@/components/hospitals/HospitalsDirectorySection";
 import { hasLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
