@@ -19,7 +19,7 @@ async function page({ params }: AdminPageProps) {
 
   return (
     <section>
-      <LogIn labels={dict.login} />
+      <LogIn labels={dict.login} lang={lang} />
     </section>
   );
 }

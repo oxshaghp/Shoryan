@@ -1,10 +1,14 @@
 "use client";
 
+import { logIn } from "@/server/auth";
 import { Eye, EyeOff, LockKeyhole, Mail, ShieldCheck } from "lucide-react";
-import { useState, type FormEvent } from "react";
-
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 type LogInProps = {
   labels: LoginLabels;
+  lang: string;
 };
 
 type LoginLabels = {
@@ -27,12 +31,61 @@ type LoginLabels = {
   hidePassword: string;
 };
 
-function LogIn({ labels }: LogInProps) {
+function LogIn({ labels, lang }: LogInProps) {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // API integration goes here.
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!email.trim() || !password.trim()) {
+      const message = "Email and password are required";
+      toast.error(message);
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const result = await logIn({ email, password });
+
+if (!result.ok) {
+  toast.error(result.message);
+  setLoading(false);
+  return;
+}
+
+      const directToken = result.data.token;
+      const nestedData = result.data.data;
+      const nestedToken =
+        typeof nestedData === "object" &&
+        nestedData !== null &&
+        "token" in nestedData
+          ? (nestedData as { token?: unknown }).token
+          : undefined;
+
+      const token =
+        typeof directToken === "string"
+          ? directToken
+          : typeof nestedToken === "string"
+            ? nestedToken
+            : "";
+
+      if (token) {
+        localStorage.setItem("token", token);
+      }
+
+      toast.success("Logged in successfully!");
+      router.replace(`/${lang}/dashboard`);
+    } catch (err) {
+      toast.error("Login failed!");
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -63,6 +116,8 @@ function LogIn({ labels }: LogInProps) {
                 <Mail className="size-5 text-(--hero-copy) transition group-focus-within:text-(--hero-accent)" />
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder={labels.emailPlaceholder}
                   className="h-full w-full bg-transparent px-3 text-base text-(--hero-ink) outline-none placeholder:text-(--hero-copy)/80"
                 />
@@ -75,6 +130,8 @@ function LogIn({ labels }: LogInProps) {
                 <LockKeyhole className="size-5 text-(--hero-copy) transition group-focus-within:text-(--hero-accent)" />
                 <input
                   type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder={labels.passwordPlaceholder}
                   className="h-full w-full bg-transparent px-3 text-base text-(--hero-ink) outline-none placeholder:text-(--hero-copy)/80"
                 />
@@ -105,9 +162,10 @@ function LogIn({ labels }: LogInProps) {
 
             <button
               type="submit"
+              disabled={loading}
               className="inline-flex h-14 w-full items-center justify-center rounded-xl bg-(--hero-accent) px-6 text-xl font-bold text-white shadow-[0_12px_28px_-14px_var(--hero-shadow-strong)] transition hover:bg-(--hero-accent-strong)"
             >
-              {labels.submit}
+              {loading ? "Please wait..." : labels.submit}
             </button>
           </form>
         </article>
@@ -129,6 +187,7 @@ function LogIn({ labels }: LogInProps) {
           </ul>
         </aside>
       </div>
+      <ToastContainer />
     </section>
   );
 }

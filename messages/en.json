@@ -309,6 +309,10 @@
     "showPassword": "Show password",
     "hidePassword": "Hide password"
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Welcome to your dashboard. You can monitor requests, updates, and manage operations from here."
+  },
   "nav": {
     "brand": "Shoryan",
     "links": {
