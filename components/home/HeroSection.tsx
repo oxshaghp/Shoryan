@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Building2, HeartPulse, ShieldCheck, Users } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -31,6 +32,8 @@ type HeroSectionProps = {
 };
 
 function HeroSection({ lang, labels }: HeroSectionProps) {
+  const withLocale = (href: string) => `/${lang}${href === "/" ? "" : href}`;
+
   return (
     <section data-lang={lang} className="relative w-full overflow-hidden hero-surface-gradient">
       <div className="mx-auto w-full max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:pb-24 lg:pt-20">
@@ -78,17 +81,19 @@ function HeroSection({ lang, labels }: HeroSectionProps) {
               className="mt-8 flex flex-wrap items-center gap-4"
             >
               <Button
+                asChild
                 className="h-12 rounded-xl bg-(--hero-accent) px-7 text-base font-bold text-white shadow-[0_10px_30px_-12px_var(--hero-shadow-strong)] hover:bg-(--hero-accent-strong)"
                 size="lg"
               >
-                {labels.needBlood}
+                <Link href={withLocale("/hospitals")}>{labels.needBlood}</Link>
               </Button>
               <Button
+                asChild
                 variant="outline"
                 className="h-12 rounded-xl border-(--hero-accent) bg-white/70 px-7 text-base font-bold text-(--hero-accent) hover:bg-(--hero-soft-accent)"
                 size="lg"
               >
-                {labels.donate}
+                <Link href={withLocale("/contact")}>{labels.donate}</Link>
               </Button>
             </motion.div>
           </div>

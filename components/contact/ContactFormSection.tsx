@@ -1,5 +1,8 @@
+"use client";
+
 import { Clock3, Heart, Send } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 import type { AppLocale } from "@/lib/i18n/config";
 
@@ -65,6 +68,31 @@ const copyByLocale = {
 
 function ContactFormSection({ lang }: ContactFormSectionProps) {
   const copy = copyByLocale[lang];
+  const withLocale = (href: string) => `/${lang}${href === "/" ? "" : href}`;
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const fullName = String(formData.get("fullName") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
+    const subject = String(formData.get("subject") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    const fallbackSubject = lang === "ar" ? "رسالة من نموذج التواصل" : "Contact Form Message";
+    const body = [
+      `${lang === "ar" ? "الاسم" : "Name"}: ${fullName || "-"}`,
+      `${lang === "ar" ? "البريد" : "Email"}: ${email || "-"}`,
+      `${lang === "ar" ? "الهاتف" : "Phone"}: ${phone || "-"}`,
+      "",
+      `${lang === "ar" ? "الرسالة" : "Message"}:`,
+      message || "-",
+    ].join("\n");
+
+    const mailto = `mailto:support@shoryan.com?subject=${encodeURIComponent(subject || fallbackSubject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  };
 
   return (
     <section className="bg-[#f1f3f5] pb-16 sm:pb-20">
@@ -73,10 +101,11 @@ function ContactFormSection({ lang }: ContactFormSectionProps) {
           <h2 className="text-5xl font-extrabold tracking-tight text-(--hero-ink)">{copy.formTitle}</h2>
           <p className="mt-4 text-lg leading-8 text-(--hero-copy)">{copy.formDescription}</p>
 
-          <form className="mt-8 space-y-5">
+          <form onSubmit={handleSubmit} className="mt-8 space-y-5">
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-(--hero-ink)">{copy.fullName}</span>
               <input
+                name="fullName"
                 type="text"
                 placeholder={copy.fullNamePlaceholder}
                 className="h-13 w-full rounded-xl border border-[#dde3ea] bg-white px-4 text-base text-(--hero-ink) outline-none transition focus:border-(--hero-accent) focus:ring-3 focus:ring-(--hero-soft-accent)"
@@ -86,6 +115,7 @@ function ContactFormSection({ lang }: ContactFormSectionProps) {
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-(--hero-ink)">{copy.email}</span>
               <input
+                name="email"
                 type="email"
                 placeholder={copy.emailPlaceholder}
                 className="h-13 w-full rounded-xl border border-[#dde3ea] bg-white px-4 text-base text-(--hero-ink) outline-none transition focus:border-(--hero-accent) focus:ring-3 focus:ring-(--hero-soft-accent)"
@@ -95,6 +125,7 @@ function ContactFormSection({ lang }: ContactFormSectionProps) {
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-(--hero-ink)">{copy.phone}</span>
               <input
+                name="phone"
                 type="tel"
                 placeholder={copy.phonePlaceholder}
                 className="h-13 w-full rounded-xl border border-[#dde3ea] bg-white px-4 text-base text-(--hero-ink) outline-none transition focus:border-(--hero-accent) focus:ring-3 focus:ring-(--hero-soft-accent)"
@@ -104,6 +135,7 @@ function ContactFormSection({ lang }: ContactFormSectionProps) {
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-(--hero-ink)">{copy.subject}</span>
               <input
+                name="subject"
                 type="text"
                 defaultValue={lang === "ar" ? "استفسار عام" : "General Inquiry"}
                 className="h-13 w-full rounded-xl border border-[#dde3ea] bg-white px-4 text-base text-(--hero-ink) outline-none transition focus:border-(--hero-accent) focus:ring-3 focus:ring-(--hero-soft-accent)"
@@ -113,6 +145,7 @@ function ContactFormSection({ lang }: ContactFormSectionProps) {
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-(--hero-ink)">{copy.message}</span>
               <textarea
+                name="message"
                 rows={6}
                 placeholder={copy.messagePlaceholder}
                 className="w-full rounded-xl border border-[#dde3ea] bg-white px-4 py-3 text-base text-(--hero-ink) outline-none transition focus:border-(--hero-accent) focus:ring-3 focus:ring-(--hero-soft-accent)"
@@ -120,7 +153,7 @@ function ContactFormSection({ lang }: ContactFormSectionProps) {
             </label>
 
             <button
-              type="button"
+              type="submit"
               className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-(--hero-accent) px-6 text-xl font-bold text-white shadow-[0_12px_28px_-14px_var(--hero-shadow-strong)] transition hover:bg-(--hero-accent-strong)"
             >
               <Send className="size-5" />
@@ -134,21 +167,21 @@ function ContactFormSection({ lang }: ContactFormSectionProps) {
             <h3 className="text-4xl font-extrabold tracking-tight text-(--hero-ink)">{copy.quickActions}</h3>
 
             <div className="mt-5 space-y-3">
-              <button
-                type="button"
+              <Link
+                href={withLocale("/hospitals")}
                 className="inline-flex h-13 w-full items-center gap-3 rounded-xl bg-(--hero-accent) px-5 text-lg font-bold text-white"
               >
                 <Heart className="size-5" />
                 {copy.needBlood}
-              </button>
+              </Link>
 
-              <button
-                type="button"
+              <Link
+                href={withLocale("/admin")}
                 className="inline-flex h-13 w-full items-center gap-3 rounded-xl border-2 border-(--hero-accent) bg-white px-5 text-lg font-bold text-(--hero-accent)"
               >
                 <Heart className="size-5" />
                 {copy.donateBlood}
-              </button>
+              </Link>
             </div>
           </article>
 
@@ -186,28 +219,36 @@ function ContactFormSection({ lang }: ContactFormSectionProps) {
 
             <div className="mt-6 flex items-center gap-3">
               <a
-                href="#"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Facebook"
                 className="inline-flex size-12 items-center justify-center rounded-xl bg-(--hero-soft-accent) text-(--hero-accent) transition hover:bg-(--hero-accent) hover:text-white"
               >
                 <FaFacebookF className="size-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Twitter"
                 className="inline-flex size-12 items-center justify-center rounded-xl bg-(--hero-soft-accent) text-(--hero-accent) transition hover:bg-(--hero-accent) hover:text-white"
               >
                 <FaXTwitter className="size-5" />
               </a>
               <a
-                href="#"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Instagram"
                 className="inline-flex size-12 items-center justify-center rounded-xl bg-(--hero-soft-accent) text-(--hero-accent) transition hover:bg-(--hero-accent) hover:text-white"
               >
                 <FaInstagram className="size-5" />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="LinkedIn"
                 className="inline-flex size-12 items-center justify-center rounded-xl bg-(--hero-soft-accent) text-(--hero-accent) transition hover:bg-(--hero-accent) hover:text-white"
               >

@@ -2,6 +2,7 @@
 
 import { logIn } from "@/server/auth";
 import { Eye, EyeOff, LockKeyhole, Mail, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -155,9 +156,9 @@ if (!result.ok) {
                 {labels.rememberMe}
               </label>
 
-              <button type="button" className="text-sm font-semibold text-(--hero-accent) hover:underline">
+              <Link href={`/${lang}/contact`} className="text-sm font-semibold text-(--hero-accent) hover:underline">
                 {labels.forgotPassword}
-              </button>
+              </Link>
             </div>
 
             <button

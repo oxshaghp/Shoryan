@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 import type { AppLocale } from "@/lib/i18n/config";
 
@@ -18,6 +19,8 @@ type ReadySectionProps = {
 };
 
 function ReadySection({ lang, labels }: ReadySectionProps) {
+  const withLocale = (href: string) => `/${lang}${href === "/" ? "" : href}`;
+
   return (
     <section data-lang={lang} className="relative overflow-hidden bg-[#ea3535] py-18 sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute -bottom-16 inset-s-1/3 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
@@ -44,28 +47,36 @@ function ReadySection({ lang, labels }: ReadySectionProps) {
         </motion.p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-          <motion.button
-            type="button"
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45, delay: 0.12, ease: "easeOut" }}
-            className="inline-flex h-14 items-center gap-2 rounded-xl bg-white px-9 text-lg font-bold text-[#e43a3a] transition hover:bg-white/95"
+            className="inline-flex"
           >
-            {labels.learnMore}
-            <ArrowRight className="size-5" />
-          </motion.button>
+            <Link
+              href={withLocale("/about")}
+              className="inline-flex h-14 items-center gap-2 rounded-xl bg-white px-9 text-lg font-bold text-[#e43a3a] transition hover:bg-white/95"
+            >
+              {labels.learnMore}
+              <ArrowRight className="size-5" />
+            </Link>
+          </motion.div>
 
-          <motion.button
-            type="button"
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45, delay: 0.18, ease: "easeOut" }}
-            className="inline-flex h-14 items-center rounded-xl border-2 border-white bg-transparent px-9 text-lg font-bold text-white transition hover:bg-white/10"
+            className="inline-flex"
           >
-            {labels.getStarted}
-          </motion.button>
+            <Link
+              href={withLocale("/admin")}
+              className="inline-flex h-14 items-center rounded-xl border-2 border-white bg-transparent px-9 text-lg font-bold text-white transition hover:bg-white/10"
+            >
+              {labels.getStarted}
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>
