@@ -32,6 +32,7 @@ export type DashboardViewProps = {
   sectionLabels: Record<DashboardSectionKey, string>;
   ui: DashboardUiLabels;
   snapshot: DashboardSnapshot;
+  onNavigateSection?: (section: DashboardSectionKey) => void;
 };
 
 export type DashboardViewComponent = ComponentType<DashboardViewProps>;
@@ -166,6 +167,17 @@ export type DashboardUiLabels = {
     searchPlaceholder: string;
     allStatuses: string;
     allUrgencies: string;
+    createDialogTitle: string;
+    createDialogDescription: string;
+    patientNameLabel: string;
+    hospitalNameLabel: string;
+    locationLabel: string;
+    contactPhoneLabel: string;
+    bloodTypeLabel: string;
+    urgencyLabel: string;
+    createSubmit: string;
+    createSubmitting: string;
+    cancel: string;
   };
   donors: {
     searchPlaceholder: string;
@@ -177,12 +189,31 @@ export type DashboardUiLabels = {
   };
   notifications: {
     searchPlaceholder: string;
+    allTab: string;
+    unreadTab: string;
+    readTab: string;
+    markAllRead: string;
+    delete: string;
   };
   analytics: {
     requestsByUrgency: string;
     usersDistribution: string;
     topBloodTypes: string;
     noBloodTypes: string;
+    titleMain: string;
+    titleSecondary: string;
+    subtitle: string;
+    exportReport: string;
+    totalDonations: string;
+    activeDonors: string;
+    completionRate: string;
+    avgPerDonor: string;
+    donationsOverTime: string;
+    bloodTypeDistribution: string;
+    donorCountByBloodType: string;
+    activeSuffix: string;
+    trendUp: string;
+    lastSixMonths: string;
   };
 };
 

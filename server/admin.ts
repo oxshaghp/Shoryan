@@ -13,7 +13,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
 
-async function adminRequest(path: string, method: "PATCH" | "POST", body?: Record<string, unknown>): Promise<DashboardActionResult> {
+async function adminRequest(path: string, method: "PATCH" | "POST" | "DELETE", body?: Record<string, unknown>): Promise<DashboardActionResult> {
   const cookieStore = await cookies();
   const accessToken = cookieStore.get("admin_access_token")?.value;
 
@@ -55,7 +55,31 @@ export async function toggleDonorActive(id: string): Promise<DashboardActionResu
 }
 
 export async function markNotificationRead(id: string): Promise<DashboardActionResult> {
+  if (id.startsWith("mock-notification-")) {
+    return {
+      ok: true,
+      status: 200,
+      message: "Marked as read",
+    };
+  }
+
   return adminRequest(`/api/v1/notifications/${id}/read`, "PATCH");
+}
+
+export async function markAllNotificationsRead(): Promise<DashboardActionResult> {
+  return adminRequest("/api/v1/notifications/mark-all-read", "PATCH");
+}
+
+export async function deleteNotification(id: string): Promise<DashboardActionResult> {
+  if (id.startsWith("mock-notification-")) {
+    return {
+      ok: true,
+      status: 200,
+      message: "Deleted",
+    };
+  }
+
+  return adminRequest(`/api/v1/notifications/${id}`, "DELETE");
 }
 
 export async function approveBloodBank(id: string): Promise<DashboardActionResult> {
@@ -82,4 +106,54 @@ export async function approveBloodRequest(id: string): Promise<DashboardActionRe
   return adminRequest(`/api/v1/blood-requests/${id}`, "PATCH", {
     status: "FULFILLED",
   });
+}
+
+export async function rejectBloodRequest(id: string): Promise<DashboardActionResult> {
+  if (id.startsWith("mock-request-")) {
+    return {
+      ok: true,
+      status: 200,
+      message: "Rejected",
+    };
+  }
+
+  return adminRequest(`/api/v1/blood-requests/${id}/cancel`, "PATCH");
+}
+
+export async function completeBloodRequest(id: string): Promise<DashboardActionResult> {
+  if (id.startsWith("mock-request-")) {
+    return {
+      ok: true,
+      status: 200,
+      message: "Completed",
+    };
+  }
+
+  return adminRequest(`/api/v1/blood-requests/${id}`, "PATCH", {
+    status: "FULFILLED",
+  });
+}
+
+type CreateBloodRequestInput = {
+  patientName: string;
+  hospitalName: string;
+  location: string;
+  contactPhone: string;
+  bloodType: string;
+  urgency: string;
+};
+
+export async function createBloodRequest(input: CreateBloodRequestInput): Promise<DashboardActionResult> {
+  const payload = {
+    patientName: input.patientName,
+    hospitalName: input.hospitalName,
+    city: input.location,
+    location: input.location,
+    contactPhone: input.contactPhone,
+    bloodType: input.bloodType,
+    urgency: input.urgency,
+    status: "OPEN",
+  };
+
+  return adminRequest("/api/v1/blood-requests", "POST", payload);
 }

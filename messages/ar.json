@@ -417,7 +417,18 @@
       "bloodRequests": {
         "searchPlaceholder": "ابحث باسم المريض أو فصيلة الدم",
         "allStatuses": "كل الحالات",
-        "allUrgencies": "كل درجات الاستعجال"
+        "allUrgencies": "كل درجات الاستعجال",
+        "createDialogTitle": "إنشاء طلب دم",
+        "createDialogDescription": "املأ البيانات التالية لإنشاء طلب تبرع عادي.",
+        "patientNameLabel": "اسم المريض",
+        "hospitalNameLabel": "اسم المستشفى",
+        "locationLabel": "الموقع",
+        "contactPhoneLabel": "رقم التواصل",
+        "bloodTypeLabel": "فصيلة الدم",
+        "urgencyLabel": "درجة الاستعجال",
+        "createSubmit": "إنشاء الطلب",
+        "createSubmitting": "جاري الإنشاء...",
+        "cancel": "إلغاء"
       },
       "donors": {
         "searchPlaceholder": "ابحث باسم المتبرع أو الفصيلة أو الجوال"
@@ -428,13 +439,32 @@
         "noPending": "لا توجد بنوك دم قيد الانتظار."
       },
       "notifications": {
-        "searchPlaceholder": "ابحث في الإشعارات"
+        "searchPlaceholder": "ابحث في الإشعارات",
+        "allTab": "الكل",
+        "unreadTab": "غير مقروء",
+        "readTab": "مقروء",
+        "markAllRead": "تحديد الكل كمقروء",
+        "delete": "حذف"
       },
       "analytics": {
         "requestsByUrgency": "الطلبات حسب درجة الاستعجال",
         "usersDistribution": "توزيع المستخدمين",
         "topBloodTypes": "أكثر فصائل الدم",
-        "noBloodTypes": "لا يوجد توزيع لفصائل الدم حتى الآن."
+        "noBloodTypes": "لا يوجد توزيع لفصائل الدم حتى الآن.",
+        "titleMain": "التحليلات والتقارير",
+        "titleSecondary": "Analytics & Reports",
+        "subtitle": "مؤشرات الأداء والتحليلات التشغيلية",
+        "exportReport": "تصدير التقرير",
+        "totalDonations": "إجمالي التبرعات",
+        "activeDonors": "المتبرعون النشطون",
+        "completionRate": "معدل الاكتمال",
+        "avgPerDonor": "متوسط لكل متبرع",
+        "donationsOverTime": "التبرعات عبر الوقت",
+        "bloodTypeDistribution": "توزيع فصائل الدم",
+        "donorCountByBloodType": "عدد المتبرعين حسب الفصيلة",
+        "activeSuffix": "نشط",
+        "trendUp": "ارتفاع",
+        "lastSixMonths": "آخر 6 شهور"
       }
     }
   },

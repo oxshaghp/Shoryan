@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shoryan Frontend (Next.js 16)
 
-## Getting Started
+Shoryan is a bilingual blood donation platform frontend built with Next.js App Router, featuring a public website and an admin dashboard with API-backed operations.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 16.2.2 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Recharts (analytics visualizations)
+- Server Actions for admin mutations
+
+## Features
+
+- Public localized pages under app/[lang]
+- Arabic and English dictionaries in messages/ar.json and messages/en.json
+- Admin dashboard with modular panels:
+1. Overview
+2. Blood Requests
+3. Donors
+4. Hospitals
+5. Notifications
+6. Analytics
+- Cookie-based admin session integration
+- API snapshot aggregation with mock fallback support
+- Interactive admin actions:
+1. Create, approve, reject, complete blood requests
+2. Toggle donor active status
+3. Approve/reject/suspend blood banks
+4. Mark notification read, mark all as read, delete notification
+
+## Project Structure
+
+- app/[lang]: Localized routes and dashboard page entry
+- components: UI and feature components (including dashboard panels)
+- server: Server actions and API integration
+- lib/i18n: Locale config and dictionary loading
+- messages: Translation dictionaries
+- types: Shared dashboard and app TypeScript types
+
+## Prerequisites
+
+- Node.js 20+
+- npm 10+
+- Backend API running (default expected at http://localhost:3001)
+
+## Environment Variables
+
+Create a .env.local file in the project root:
+
+```bash
+API_URL=http://localhost:3001
+NEXT_PUBLIC_API_URL=http://localhost:3001
+```
+
+The app reads API_URL first, then NEXT_PUBLIC_API_URL as fallback.
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- http://localhost:3000/en
+- http://localhost:3000/ar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+- npm run dev: Start local development server
+- npm run lint: Run ESLint checks
+- npm run build: Create production build
+- npm run start: Start production server
 
-To learn more about Next.js, take a look at the following resources:
+## Authentication Flow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Admin login is handled through server/auth.ts
+- Access token is stored as an HTTP-only cookie named admin_access_token
+- Dashboard server actions read token from cookies and call backend admin endpoints
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Production Readiness Checklist
 
-## Deploy on Vercel
+1. Set production API_URL and NEXT_PUBLIC_API_URL
+2. Ensure backend CORS and auth settings allow frontend domain
+3. Run npm run lint and fix all issues
+4. Run npm run build and verify successful output
+5. Test both locales (/en and /ar)
+6. Test all dashboard actions with real backend data
+7. Verify cookie security flags in production (Secure, SameSite policy as needed)
+8. Configure reverse proxy / SSL for deployment domain
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Build and run:
+
+```bash
+npm run build
+npm run start
+```
+
+You can deploy on any Node.js-compatible environment (Vercel, VPS, Docker, or cloud platforms).
+
+## Notes
+
+- If backend data is unavailable, dashboard snapshot logic can show fallback mock data to keep UI operational.
+- For language additions, extend messages/*.json and locale config in lib/i18n.

@@ -8,7 +8,6 @@ import {
   Droplets,
   HandHeart,
   LayoutGrid,
-  Info,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -70,7 +69,6 @@ function DashboardWorkspace({ labels, content, ui, snapshot, locale }: Dashboard
   const sections = useMemo<DashboardSectionMeta[]>(
     () => [
       { key: "overview", icon: LayoutGrid, label: labels.sections.overview },
-      { key: "projectInfo", icon: Info, label: labels.sections.projectInfo },
       { key: "bloodRequests", icon: Droplets, label: labels.sections.bloodRequests },
       { key: "donors", icon: HandHeart, label: labels.sections.donors },
       { key: "hospitals", icon: Building2, label: labels.sections.hospitals },
@@ -116,6 +114,7 @@ function DashboardWorkspace({ labels, content, ui, snapshot, locale }: Dashboard
             sectionLabels={labels.sections}
             ui={ui}
             snapshot={snapshot}
+            onNavigateSection={setActiveSection}
           />
         </div>
       </div>

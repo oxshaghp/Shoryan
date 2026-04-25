@@ -417,7 +417,18 @@
       "bloodRequests": {
         "searchPlaceholder": "Search by patient or blood type",
         "allStatuses": "All statuses",
-        "allUrgencies": "All urgencies"
+        "allUrgencies": "All urgencies",
+        "createDialogTitle": "Create Blood Request",
+        "createDialogDescription": "Fill the details below to create a standard blood request.",
+        "patientNameLabel": "Patient Name",
+        "hospitalNameLabel": "Hospital Name",
+        "locationLabel": "Location",
+        "contactPhoneLabel": "Contact Phone",
+        "bloodTypeLabel": "Blood Type",
+        "urgencyLabel": "Urgency",
+        "createSubmit": "Create Request",
+        "createSubmitting": "Creating...",
+        "cancel": "Cancel"
       },
       "donors": {
         "searchPlaceholder": "Search by donor, blood type, or mobile"
@@ -428,13 +439,32 @@
         "noPending": "No pending blood banks."
       },
       "notifications": {
-        "searchPlaceholder": "Search notifications"
+        "searchPlaceholder": "Search notifications",
+        "allTab": "All",
+        "unreadTab": "Unread",
+        "readTab": "Read",
+        "markAllRead": "Mark all as read",
+        "delete": "Delete"
       },
       "analytics": {
         "requestsByUrgency": "Requests By Urgency",
         "usersDistribution": "Users Distribution",
         "topBloodTypes": "Top Blood Types",
-        "noBloodTypes": "No blood type distribution yet."
+        "noBloodTypes": "No blood type distribution yet.",
+        "titleMain": "Analytics & Reports",
+        "titleSecondary": "التحليلات والتقارير",
+        "subtitle": "Insights and performance metrics",
+        "exportReport": "Export Report",
+        "totalDonations": "Total Donations",
+        "activeDonors": "Active Donors",
+        "completionRate": "Completion Rate",
+        "avgPerDonor": "Avg per Donor",
+        "donationsOverTime": "Donations Over Time",
+        "bloodTypeDistribution": "Blood Type Distribution",
+        "donorCountByBloodType": "Donor Count by Blood Type",
+        "activeSuffix": "active",
+        "trendUp": "up",
+        "lastSixMonths": "Last 6 Months"
       }
     }
   },

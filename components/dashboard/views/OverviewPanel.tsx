@@ -16,7 +16,7 @@ import { approveBloodRequest } from "@/server/admin";
 import type { DashboardViewProps } from "@/types/types";
 import SectionPanelShell from "@/components/dashboard/views/SectionPanelShell";
 
-function OverviewPanel({ sectionName, title, description, snapshot, ui, locale }: DashboardViewProps) {
+function OverviewPanel({ sectionName, title, description, snapshot, ui, locale, onNavigateSection }: DashboardViewProps) {
   const router = useRouter();
   const [approvedIds, setApprovedIds] = useState<string[]>([]);
   const [openedRequestId, setOpenedRequestId] = useState<string | null>(null);
@@ -258,17 +258,29 @@ function OverviewPanel({ sectionName, title, description, snapshot, ui, locale }
       <section>
         <h4 className="text-3xl font-black text-(--hero-ink)">{ui.overview.quickActions}</h4>
         <div className="mt-3 grid gap-4 md:grid-cols-3">
-          <button type="button" className="rounded-2xl border border-(--hero-border-soft) bg-white p-5 text-start shadow-[0_1px_2px_rgb(17_24_39/0.08)]">
+          <button
+            type="button"
+            onClick={() => onNavigateSection?.("bloodRequests")}
+            className="rounded-2xl border border-(--hero-border-soft) bg-white p-5 text-start shadow-[0_1px_2px_rgb(17_24_39/0.08)]"
+          >
             <Droplet className="size-7 text-(--hero-accent)" />
             <p className="mt-3 text-2xl font-black text-(--hero-ink)">{ui.overview.createBloodRequest}</p>
             <p className="mt-1 text-sm text-(--hero-copy)">{ui.overview.createBloodRequestDesc}</p>
           </button>
-          <button type="button" className="rounded-2xl border border-(--hero-border-soft) bg-white p-5 text-start shadow-[0_1px_2px_rgb(17_24_39/0.08)]">
+          <button
+            type="button"
+            onClick={() => onNavigateSection?.("donors")}
+            className="rounded-2xl border border-(--hero-border-soft) bg-white p-5 text-start shadow-[0_1px_2px_rgb(17_24_39/0.08)]"
+          >
             <UserRound className="size-7 text-[#2563eb]" />
             <p className="mt-3 text-2xl font-black text-(--hero-ink)">{ui.overview.registerDonor}</p>
             <p className="mt-1 text-sm text-(--hero-copy)">{ui.overview.registerDonorDesc}</p>
           </button>
-          <button type="button" className="rounded-2xl border border-(--hero-border-soft) bg-white p-5 text-start shadow-[0_1px_2px_rgb(17_24_39/0.08)]">
+          <button
+            type="button"
+            onClick={() => onNavigateSection?.("notifications")}
+            className="rounded-2xl border border-(--hero-border-soft) bg-white p-5 text-start shadow-[0_1px_2px_rgb(17_24_39/0.08)]"
+          >
             <CheckCircle2 className="size-7 text-[#16a34a]" />
             <p className="mt-3 text-2xl font-black text-(--hero-ink)">{ui.overview.sendAlert}</p>
             <p className="mt-1 text-sm text-(--hero-copy)">{ui.overview.sendAlertDesc}</p>
