@@ -310,8 +310,133 @@
     "hidePassword": "Hide password"
   },
   "dashboard": {
-    "title": "Dashboard",
-    "description": "Welcome to your dashboard. You can monitor requests, updates, and manage operations from here."
+    "sidebar": {
+      "brand": "Sharyan",
+      "sidebarRole": "Admin Dashboard",
+      "profileName": "Admin User",
+      "profileEmail": "admin@sharyan.com",
+      "sections": {
+        "overview": "Dashboard",
+        "projectInfo": "Project Info",
+        "bloodRequests": "Blood Requests",
+        "donors": "Donors",
+        "hospitals": "Hospitals",
+        "notifications": "Notifications",
+        "analytics": "Analytics"
+      }
+    },
+    "sections": {
+      "overview": {
+        "title": "Main Dashboard",
+        "description": "A quick operational overview ready to receive live metrics once the API integration starts."
+      },
+      "projectInfo": {
+        "title": "Project Info",
+        "description": "This section is prepared for organization settings, project metadata, and administrative configuration."
+      },
+      "bloodRequests": {
+        "title": "Blood Requests",
+        "description": "A dedicated panel for request queues, urgency levels, and donor-matching workflow data."
+      },
+      "donors": {
+        "title": "Donors",
+        "description": "Structured donor records, availability status, and response history will be rendered here."
+      },
+      "hospitals": {
+        "title": "Hospitals",
+        "description": "Partner hospitals and blood bank coordination data will be managed from this area."
+      },
+      "notifications": {
+        "title": "Notifications",
+        "description": "A real-time alerts stream for urgent cases, workflow updates, and critical action prompts."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "KPI panels and trend views for operational monitoring and decision support."
+      }
+    },
+    "ui": {
+      "sidebar": {
+        "logout": "Log out",
+        "loggingOut": "Logging out..."
+      },
+      "common": {
+        "total": "Total",
+        "noData": "No data found.",
+        "search": "Search",
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page",
+        "of": "of",
+        "all": "All",
+        "active": "Active",
+        "inactive": "Inactive",
+        "available": "Available",
+        "unavailable": "Unavailable",
+        "approved": "Approved",
+        "pending": "Pending",
+        "read": "Read",
+        "unread": "Unread",
+        "toggleStatus": "Toggle status",
+        "markRead": "Mark as read",
+        "approve": "Approve",
+        "reject": "Reject",
+        "suspend": "Suspend"
+      },
+      "overview": {
+        "totalDonations": "Total Donations",
+        "activeDonors": "Active Donors",
+        "urgentRequests": "Urgent Requests",
+        "pendingActions": "Pending Actions",
+        "thisMonth": "this month",
+        "totalRegistered": "total registered",
+        "requiresAttention": "Requires immediate attention",
+        "unreadNotifications": "Unread notifications",
+        "emergencyBloodRequests": "Emergency Blood Requests",
+        "recentBloodRequests": "Recent Blood Requests",
+        "availableDonors": "Available Donors",
+        "quickActions": "Quick Actions",
+        "createBloodRequest": "Create Blood Request",
+        "createBloodRequestDesc": "Add a new blood donation request",
+        "registerDonor": "Register Donor",
+        "registerDonorDesc": "Add a new donor to the system",
+        "sendAlert": "Send Alert",
+        "sendAlertDesc": "Notify donors about urgent needs",
+        "urgent": "Urgent",
+        "viewDetails": "View Details",
+        "lastSync": "Last sync"
+      },
+      "projectInfo": {
+        "adminName": "Admin name",
+        "email": "Email",
+        "role": "Role",
+        "status": "Status",
+        "admin": "Admin",
+        "superAdmin": "Super Admin"
+      },
+      "bloodRequests": {
+        "searchPlaceholder": "Search by patient or blood type",
+        "allStatuses": "All statuses",
+        "allUrgencies": "All urgencies"
+      },
+      "donors": {
+        "searchPlaceholder": "Search by donor, blood type, or mobile"
+      },
+      "hospitals": {
+        "searchPlaceholder": "Search by blood bank or city",
+        "noApproved": "No approved blood banks.",
+        "noPending": "No pending blood banks."
+      },
+      "notifications": {
+        "searchPlaceholder": "Search notifications"
+      },
+      "analytics": {
+        "requestsByUrgency": "Requests By Urgency",
+        "usersDistribution": "Users Distribution",
+        "topBloodTypes": "Top Blood Types",
+        "noBloodTypes": "No blood type distribution yet."
+      }
+    }
   },
   "nav": {
     "brand": "Shoryan",

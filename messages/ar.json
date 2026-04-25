@@ -310,8 +310,133 @@
     "hidePassword": "إخفاء كلمة المرور"
   },
   "dashboard": {
-    "title": "لوحة التحكم",
-    "description": "مرحبًا بك في لوحة التحكم. يمكنك متابعة الطلبات والتحديثات وإدارة العمليات من هنا."
+    "sidebar": {
+      "brand": "Sharyan",
+      "sidebarRole": "لوحة تحكم الإدارة",
+      "profileName": "Admin User",
+      "profileEmail": "admin@sharyan.com",
+      "sections": {
+        "overview": "لوحة التحكم",
+        "projectInfo": "بيانات المشروع",
+        "bloodRequests": "طلبات الدم",
+        "donors": "المتبرعون",
+        "hospitals": "المستشفيات",
+        "notifications": "الإشعارات",
+        "analytics": "التحليلات"
+      }
+    },
+    "sections": {
+      "overview": {
+        "title": "لوحة التحكم الرئيسية",
+        "description": "متابعة سريعة لحالة النظام والبيانات العامة قبل ربط المؤشرات الحية من الـ API."
+      },
+      "projectInfo": {
+        "title": "بيانات المشروع",
+        "description": "هنا هنعرض إعدادات المشروع، البيانات التعريفية، والتكوينات الأساسية الخاصة بالإدارة."
+      },
+      "bloodRequests": {
+        "title": "طلبات الدم",
+        "description": "قسم مخصص لمتابعة طلبات الدم حسب الأولوية والحالة وتفاصيل المطابقة."
+      },
+      "donors": {
+        "title": "المتبرعون",
+        "description": "واجهة عرض بيانات المتبرعين، حالة التوفر، وسجل الاستجابة لكل متبرع."
+      },
+      "hospitals": {
+        "title": "المستشفيات",
+        "description": "إدارة وعرض المستشفيات الشريكة وتحديثات التوافر والتنسيق بينها وبين النظام."
+      },
+      "notifications": {
+        "title": "الإشعارات",
+        "description": "تجميع الإشعارات والتنبيهات الفورية المتعلقة بالطلبات العاجلة وحالة العمليات."
+      },
+      "analytics": {
+        "title": "التحليلات",
+        "description": "لوحة تحليلات مخصصة للمقاييس والاتجاهات لدعم القرارات التشغيلية بشكل أدق."
+      }
+    },
+    "ui": {
+      "sidebar": {
+        "logout": "تسجيل الخروج",
+        "loggingOut": "جاري تسجيل الخروج..."
+      },
+      "common": {
+        "total": "الإجمالي",
+        "noData": "لا توجد بيانات.",
+        "search": "بحث",
+        "previous": "السابق",
+        "next": "التالي",
+        "page": "الصفحة",
+        "of": "من",
+        "all": "الكل",
+        "active": "نشط",
+        "inactive": "غير نشط",
+        "available": "متاح",
+        "unavailable": "غير متاح",
+        "approved": "معتمد",
+        "pending": "قيد الانتظار",
+        "read": "مقروء",
+        "unread": "غير مقروء",
+        "toggleStatus": "تبديل الحالة",
+        "markRead": "تعيين كمقروء",
+        "approve": "اعتماد",
+        "reject": "رفض",
+        "suspend": "تعليق"
+      },
+      "overview": {
+        "totalDonations": "إجمالي التبرعات",
+        "activeDonors": "المتبرعون النشطون",
+        "urgentRequests": "الطلبات العاجلة",
+        "pendingActions": "إجراءات معلقة",
+        "thisMonth": "هذا الشهر",
+        "totalRegistered": "إجمالي المسجلين",
+        "requiresAttention": "تحتاج تدخل فوري",
+        "unreadNotifications": "إشعارات غير مقروءة",
+        "emergencyBloodRequests": "طلبات الدم الطارئة",
+        "recentBloodRequests": "أحدث طلبات الدم",
+        "availableDonors": "المتبرعون المتاحون",
+        "quickActions": "إجراءات سريعة",
+        "createBloodRequest": "إنشاء طلب دم",
+        "createBloodRequestDesc": "أضف طلب تبرع بالدم جديد",
+        "registerDonor": "تسجيل متبرع",
+        "registerDonorDesc": "إضافة متبرع جديد إلى النظام",
+        "sendAlert": "إرسال تنبيه",
+        "sendAlertDesc": "تنبيه المتبرعين عند الحالات العاجلة",
+        "urgent": "عاجل",
+        "viewDetails": "عرض التفاصيل",
+        "lastSync": "آخر مزامنة"
+      },
+      "projectInfo": {
+        "adminName": "اسم المسؤول",
+        "email": "البريد الإلكتروني",
+        "role": "الدور",
+        "status": "الحالة",
+        "admin": "مسؤول",
+        "superAdmin": "مسؤول عام"
+      },
+      "bloodRequests": {
+        "searchPlaceholder": "ابحث باسم المريض أو فصيلة الدم",
+        "allStatuses": "كل الحالات",
+        "allUrgencies": "كل درجات الاستعجال"
+      },
+      "donors": {
+        "searchPlaceholder": "ابحث باسم المتبرع أو الفصيلة أو الجوال"
+      },
+      "hospitals": {
+        "searchPlaceholder": "ابحث باسم بنك الدم أو المدينة",
+        "noApproved": "لا توجد بنوك دم معتمدة.",
+        "noPending": "لا توجد بنوك دم قيد الانتظار."
+      },
+      "notifications": {
+        "searchPlaceholder": "ابحث في الإشعارات"
+      },
+      "analytics": {
+        "requestsByUrgency": "الطلبات حسب درجة الاستعجال",
+        "usersDistribution": "توزيع المستخدمين",
+        "topBloodTypes": "أكثر فصائل الدم",
+        "noBloodTypes": "لا يوجد توزيع لفصائل الدم حتى الآن."
+      }
+    }
   },
   "nav": {
     "brand": "شريان",
